@@ -1,0 +1,22 @@
+{
+   "appId": "RepairGest",  
+   "productName": "RepairGest",
+   "directories": {
+      "output": "dist"
+   },
+   "files": [
+      "dist/**/*",
+      "electron/electron.js"
+   ],
+   "extends": null,
+   "buildDependenciesFromSource": true,
+   "asar": true,
+   "win": {
+      "target": "squirrel",
+      "squirrelWindows": {
+         "iconUrl": "app/favicon.ico",
+         "loadingGif": "path/to/loading.gif",
+         "msi": true
+      }
+   }
+}
