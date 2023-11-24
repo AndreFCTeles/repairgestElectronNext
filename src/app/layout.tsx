@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import React from 'react'
+import React, { useState } from 'react'
 import Banner from '../components/Banner'
 import Sidebar from '../components/Sidebar'
 
@@ -13,24 +13,25 @@ export const metadata: Metadata = {
 }
 
 interface LayoutProps {
-    // props inventados só para a interface não estar vazia:
-    
+    // props inventados só para a interface não estar vazia:    
     children: string;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="flex h-screen">
+    
+      <div className="flex-1 flex flex-col h-screen overflow-hidden">
         <Banner>
           {/* Add content for the banner here */}
           Banner Content
         </Banner>
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <Sidebar>
-          {/* Add content for the sidebar here */}
-          Sidebar Content
-        </Sidebar>
+        <div className="flex h-screen">
+          <Sidebar>
+            {/* Add content for the sidebar here */}
+            Sidebar Content
+          </Sidebar>
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
+          Main Content
         </main>
       </div>
     </div>

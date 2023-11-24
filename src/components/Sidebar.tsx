@@ -1,8 +1,7 @@
 import React from 'react';
 
 interface SidebarProps {
-   // props inventados só para a interface não estar vazia:
-   
+   // props inventados só para a interface não estar vazia:   
    children: string;
 }
 
