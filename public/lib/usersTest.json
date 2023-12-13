@@ -1,0 +1,25 @@
+{
+   "users": [
+      {
+         "user_id": "1",
+         "user_name": "André Teles",
+         "user_email": "andrefcteles@gmail.com",
+         "user_city": "Aveiro",
+         "user_role": ["comercial", "reparador", "admin"]
+      },
+      {
+         "user_id": "2",
+         "user_name": "Juremo Antunes",
+         "user_email": "juremo_antunes@gmail.com",
+         "user_city": "Aveiro",
+         "user_role": ["comercial"]
+      },
+      {
+         "user_id": "3",
+         "user_name": "Rosvaldo Mangalhães",
+         "user_email": "xxx_romaggio_xxx1990@gmail.com",
+         "user_city": "Aveiro",
+         "user_role": ["reparador"]
+      }
+   ]
+}
