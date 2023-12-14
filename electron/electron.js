@@ -1,5 +1,5 @@
-const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
-const { app, BrowserWindow, autoUpdater } = require('electron');
+// const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
+const { app, BrowserWindow } = require('electron');
 const isDev = require('electron-is-dev');
 const { join, path } = require('path');
 const url = require('url');
@@ -19,11 +19,12 @@ function createWindow() {
       webPreferences: {
          nodeIntegration: true,
          contextIsolation: true,
+         enableRemoteModule: true,
          preload: join(__dirname, 'preload.js'),
       },
    });
 
-   // paths
+   // caminhos
    const startUrl = isDev
       ? 'http://localhost:3000' // Next.js development server URL
       : url.format({
@@ -32,29 +33,24 @@ function createWindow() {
          slashes: true,
       });
 
-   // start
+   // inicio
    mainWindow.loadURL(startUrl);
-   // end
+   // fim
    mainWindow.on('closed', () => (mainWindow = null));
 };
-
-// Set the update server URL (replace with your server URL)
-/*
-const checkForUpdates = () => {
-   autoUpdater.setFeedURL('https://your-update-server.com')
-   autoUpdater.checkForUpdatesAndNotify();
-}
-*/
 
 app.setName(appMetadata.name);
 app.setVersion(appMetadata.version);
 app.whenReady()
-   .then(() => {
-      installExtension(REACT_DEVELOPER_TOOLS)
-         .then((name) => console.log(`Added Extension:  ${name}`))
-         .catch((err) => console.log('An error occurred: ', err))
-      /* .then(checkForUpdates) */;
-   })
+   /*
+      .then(async () => {
+         await installExtension(REACT_DEVELOPER_TOOLS, {
+            loadExtensionOptions: { allowFileAccess: true }
+         })
+            .then((name) => console.log(`Added Extension:  ${name}`))
+            .catch((err) => console.log('An error occurred: ', err))
+      })
+      */
    .then(createWindow)
    .then(console.log(__dirname));
 
