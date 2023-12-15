@@ -1,6 +1,6 @@
 import React from 'react';
-import Procura from '@ui/partilhado/procura';
-import DbDisplay from '@ui/partilhado/db-display';
+import Procura from '@components/partilhado/procura';
+import DbDisplay from '@components/partilhado/db-display';
 
 const ReparConteudo:React.FC = () => {
    return (    

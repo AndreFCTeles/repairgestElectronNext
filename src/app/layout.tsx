@@ -7,8 +7,8 @@ import { Inter } from 'next/font/google' // arranjar maneira de instalar local
 const inter = Inter({ subsets: ['latin'] })
 
 // Componentes
-import Banner from '@ui/partilhado/main-layout/banner';
-import GestorConteudo from '@utils/gestao-conteudo';
+import Banner from '@components/partilhado/main-layout/banner';
+import GestorConteudo from '@components/partilhado/gestao-conteudo';
 
 // Elemento MAIN
 const Layout: React.FC = () => { 

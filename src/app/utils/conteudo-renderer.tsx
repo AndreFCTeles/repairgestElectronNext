@@ -1,8 +1,8 @@
 import React from 'react';
 // Conteúdos principais
-import MainContent from '@ui/main/main-conteudo';
-import ClientesConteudo from '@ui/clientes/clientes-conteudo';
-import ReparConteudo from '@ui/reparacoes/reparacoes-conteudo';
+import MainContent from '@components/main/main-conteudo';
+import ClientesConteudo from '@components/clientes/clientes-conteudo';
+import ReparConteudo from '@components/reparacoes/reparacoes-conteudo';
 
 //determina que opção foi selecionada na sidebar para gerar conteúdos
 interface RenderConteudoProps { opcaoSelecionada: string; }

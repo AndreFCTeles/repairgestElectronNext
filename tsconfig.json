@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "target": "es5",
     "lib": [
       "dom",
@@ -16,7 +17,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
     "plugins": [
       {
         "name": "next"
@@ -26,7 +26,8 @@
       "@*": [
         "./src/app/*"
       ]
-    }
+    },
+    "incremental": false
   },
   "include": [
     "next-env.d.ts",
@@ -35,6 +36,8 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "backups",
+    "temp"
   ]
 }
